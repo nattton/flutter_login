@@ -42,7 +42,9 @@ class AuthenticationBloc
   }
 
   FutureOr<void> _onLogoutPressed(
-      LogoutPressed event, Emitter<AuthenticationState> emit) {}
+      LogoutPressed event, Emitter<AuthenticationState> emit) {
+    _authenticationRepository.logOut();
+  }
 
   Future<User?> _tryGetUser() async {
     try {
