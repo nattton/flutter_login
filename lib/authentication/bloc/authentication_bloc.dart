@@ -18,7 +18,7 @@ class AuthenticationBloc
     required UserRepository userRepository,
   })  : _authenticationRepository = authenticationRepository,
         _userRepository = userRepository,
-        super(AuthenticationState.unknow()) {
+        super(AuthenticationState.unknown()) {
     on<SubscriptionRequested>(_onSubscriptionRequested);
     on<LogoutPressed>(_onLogoutPressed);
   }
@@ -35,8 +35,8 @@ class AuthenticationBloc
           return emit(user != null
               ? AuthenticationState.authenticated(user)
               : AuthenticationState.unauthenticated());
-        case AuthenticationStatus.unknow:
-          return emit(AuthenticationState.unknow());
+        case AuthenticationStatus.unknown:
+          return emit(AuthenticationState.unknown());
       }
     }, onError: addError);
   }

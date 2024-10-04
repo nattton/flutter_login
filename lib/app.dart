@@ -77,7 +77,7 @@ class _AppViewState extends State<AppView> {
                   LoginPage.route(),
                   (route) => false,
                 );
-              case AuthenticationStatus.unknow:
+              case AuthenticationStatus.unknown:
                 break;
             }
           },
